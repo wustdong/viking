@@ -1,6 +1,8 @@
-import React, { useState, useTransition } from 'react';
+import React, { Suspense, useState, useTransition } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import DogShow from './components/DogShow';
+import Todo from './components/Todo';
 
 function App() {
   const [show, setShow]  = useState(true);
@@ -27,6 +29,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Suspense fallback='<p>loading dog show</p>'>
+          <DogShow />
+        </Suspense>
+        <Suspense fallback='<p>loading todo</p>'>
+          <Todo />
+        </Suspense>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           <button onClick={batchUpdate}>Batch Update</button>
