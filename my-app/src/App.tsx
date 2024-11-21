@@ -13,6 +13,10 @@ function App() {
 
   const [isPending, startTransition] = useTransition(); // 获取transition 的状态
   console.log('update one time--', show, counter)
+  // let a = 'ssss';
+  // if (a == 'sss') {
+    
+  // }
   const batchUpdate = () => {
     setShow(!show);
     setCounter(counter +1);

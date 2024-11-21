@@ -1,0 +1,28 @@
+ {
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "project": "./tsconfig.json"
+    },
+    "plugins": ["@typescript-eslint"],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      "react-app",
+      "react-app/jest"
+    ],
+    "rules": {
+      "@typescript-eslint/no-unused-vars": ["error"], // 未使用变量警告
+      "@typescript-eslint/no-explicit-any": ["warn"], // 限制 any 类型
+      "@typescript-eslint/strict-boolean-expressions": ["warn"],// 严格布尔表达式检查
+      // 根据团队需求添加更多规则
+      "eqeqeq": ["error", "always"],
+      "prefer-const": ["error"]
+    }
+  }
+  
